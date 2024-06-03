@@ -1,16 +1,19 @@
+@use '../variables' as *;
+@use '../typography' as *;
+@use '../mixins' as *;
+
+
 .image-card {
   width: 100%;
   aspect-ratio: 1;
   justify-content: center;
   align-items: center;
-  background: var(--block-bg-color);
+  background: var(--background-secondary);
   transition: 0.6s;
   border-radius: 3px;
 
   @include for-hover-state {
-    &:hover {
       opacity: .6;
-    }
   }
 
   figure {
@@ -36,21 +39,21 @@
 
   @include for-hover-state {
     opacity: 1;
-    &:hover h6 {
-      color: var(--hover-color);
+    h6 {
+      color: var(--content-accent-primary);
     }
   }
 
   figure {
     display: flex;
     width: 100%;
-    background: var(--block-bg-color);
+    background: var(--background-secondary);
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
     aspect-ratio: 15 / 8;
     > svg path {
-      fill: var(--primary-text-color);
+      fill: var(--content-neutral-primary);
     }
 
     @include for-mobile-screen-sizes {
@@ -67,7 +70,7 @@
     letter-spacing: -0.01rem;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--primary-text-color);
+    color: var(--content-neutral-primary);
     text-transform: none;
     transition: .6s;
 
@@ -86,18 +89,16 @@
   }
 
   @include for-hover-state {
-    &:hover {
       a {
         opacity: 1;
       }
       h6 {
-        color: var(--hover-color);
+        color: var(--content-accent-primary);
       }
 
       .system-options-img {
-        border-color: var(--hover-color);
+        border-color: var(--content-accent-primary);
       }
-    }
   }
 
   p {
@@ -106,23 +107,23 @@
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: -0.01em;
-    color: var(--secondary-text-color);
+    color: var(--content-neutral-secondary);
   }
 
   figure {
     width: 100%;
-    background: var(--block-bg-color);
+    background: var(--background-secondary);
     display: grid;
     place-items: center;
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
-    border: 1px solid var(--block-bg-color);
+    border: 1px solid var(--background-secondary);
     transition: .6s;
     aspect-ratio: 2/1;
     > svg {
       rect,line {
-        stroke: var(--primary-text-color);
+        stroke: var(--content-neutral-primary);
       }
     }
   }
@@ -131,7 +132,7 @@
     font-family: 'Berkeley Mono', monospace;
     line-height: 1.4;
     letter-spacing: -0.04em;
-    color: var(--primary-text-color);
+    color: var(--content-neutral-primary);
     font-size: 1rem;
     text-transform: none;
     transition: .6s;

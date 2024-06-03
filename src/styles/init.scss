@@ -1,41 +1,92 @@
+@use 'mixins' as *;
+@use 'color';
+@use 'spacing';
+
 html {
-  scroll-behavior: smooth;
+  font-size: 100%;
   scroll-padding-top: 60px;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+img {
+  user-select: none;
+}
+
+button {
+  color: inherit;
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+svg {
+  pointer-events: none;
+}
+
+iframe,
+video {
+  height: 100%;
+  width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+html,
 body {
-  background-color: var(--bg-color);
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
 }
 
 main {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-color);
-  gap: 40px
+  min-height: 100vh;
 }
 
-section {
-  max-width: 1248px;
-  //margin: 0 80px;
-  padding-bottom: 0 !important;
 
-  @include for-laptop-screen-sizes {
-    margin: 0 40px;
-  }
-
-  @include for-mobile-screen-sizes {
-    margin: 0 20px;
-  }
+input:-webkit-autofill {
+  background-color: var(--background-primary) !important;
 }
 
-a {
-  text-decoration: unset;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-clip: text;
+  -webkit-text-fill-color: var(--content-neutral-primary);
+  transition: var(--background-primary) 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px var(--background-primary);
 }
-pre > code {
-  text-wrap: wrap !important;
-  white-space: pre-wrap;
+
+body {
+  font-family: Inter, sans-serif;
+  text-rendering: optimizespeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--background-primary);
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
 }

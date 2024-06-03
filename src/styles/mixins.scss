@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 @mixin for-mobile-screen-sizes {
   @media screen and (max-width: #{$screen-xs}) {
     @content;
@@ -10,20 +12,31 @@
   }
 }
 
-@mixin for-laptop-screen-sizes {
-  @media screen and (max-width: #{$screen-l}) {
-    @content;
-  }
-}
-
-@mixin for-pc-screen-sizes {
-  @media screen and (max-width: #{$screen-xl}) {
-    @content;
-  }
-}
-
 @mixin for-hover-state {
   @media (hover: hover) and (pointer: fine) {
-    @content;
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin main-grid-section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 48px;
+
+  @include for-tablet-screen-sizes {
+    grid-template-columns: 100%;
+    column-gap: unset;
+  }
+}
+
+@mixin global-section {
+  max-width: min(1248px, calc(100% - 2 * 40px));
+  margin: 0 auto;
+
+  @include for-mobile-screen-sizes {
+    max-width: unset;
+    margin: 0 20px;
   }
 }

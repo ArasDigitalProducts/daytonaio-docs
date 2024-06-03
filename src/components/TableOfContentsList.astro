@@ -33,7 +33,7 @@ const { toc, isMobile = false, depth = 0 } = Astro.props;
         row-gap: 4px;
     }
     a {
-        color: var(--secondary-text-color);
+        color: var(--content-neutral-secondary);
         font-family: 'Inter', sans-serif;
         font-size: 0.78rem;
         font-weight: 500;
@@ -43,13 +43,13 @@ const { toc, isMobile = false, depth = 0 } = Astro.props;
         transition: color 0.1s ease-in-out;
         &:hover {
             text-decoration: underline;
-            color: var(--primary-text-color) !important;
-            text-decoration-color: var(--hover-color) !important;
+            color: var(--content-neutral-primary) !important;
+            text-decoration-color: var(--content-accent-primary) !important;
             text-underline-offset: 3.2px;
         }
     }
      a[aria-current='true'] {
-        color: var(--primary-text-color) !important;
+        color: var(--content-neutral-primary) !important;
         :before {
             content: '_';
         }
@@ -59,7 +59,7 @@ const { toc, isMobile = false, depth = 0 } = Astro.props;
         display: flex;
         justify-content: space-between;
         gap: var(--pad-inline);
-        border-top: var(--border);
+        border-top: $border-neutral-low;
         border-radius: 0;
         padding-block: 0.5rem;
         text-decoration: none;
@@ -71,7 +71,7 @@ const { toc, isMobile = false, depth = 0 } = Astro.props;
     .isMobile a[aria-current='true'],
     .isMobile a[aria-current='true']:hover,
     .isMobile a[aria-current='true']:focus {
-        color: var(--primary-text-color);
+        color: var(--content-neutral-primary);
         background-color: unset;
     }
     .isMobile a[aria-current='true']::after {

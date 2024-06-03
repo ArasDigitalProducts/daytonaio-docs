@@ -1,17 +1,15 @@
+@use '../variables' as *;
+@use '../typography' as *;
+@use '../mixins' as *;
+
+
 .page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: min(1248px, calc(100% - 2 * 40px));
   margin: 0 auto;
-  max-width: 1248px;
 
-  @include for-pc-screen-sizes {
-    margin: 0 80px;
-  }
-
-  @include for-laptop-screen-sizes {
-    margin: 0 40px;
-  }
 
   @include for-mobile-screen-sizes {
     margin: 0 20px;

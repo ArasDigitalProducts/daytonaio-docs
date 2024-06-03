@@ -1,5 +1,6 @@
 ---
 import {PAGE_TITLE_ID} from "./TableOfContent/constants";
+import '@styles/components/page-title.scss'
 ---
 
 <h1 id={PAGE_TITLE_ID}>{Astro.props.entry.data.title}</h1>
@@ -14,32 +15,3 @@ import {PAGE_TITLE_ID} from "./TableOfContent/constants";
     </dl>
     )}
 
-<style>
-    .tiers-distribution-list {
-        margin: 0;
-        border-left: 1px solid var(--hover-color);
-        padding-left: 8px;
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        > div {
-            display: inline-flex;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 0.75rem;
-            line-height: 1.4;
-            letter-spacing: -0.02em;
-            > dt {
-                color: var(--secondary-text-color);
-            }
-            > dd {
-                color: var(--primary-text-color);
-                margin-left: 1ch;
-            }
-        }
-
-    }
-    h1 {
-        margin-bottom: unset !important;
-    }
-</style>

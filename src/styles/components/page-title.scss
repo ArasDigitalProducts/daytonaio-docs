@@ -1,0 +1,33 @@
+@use '../typography' as *;
+@use '../spacing' as *;
+
+.tiers-distribution-list {
+  margin: 0;
+  border-left: 1px solid var(--content-accent-primary);
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  > div {
+    display: inline-flex;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    > dt {
+      color: var(--content-neutral-secondary);
+    }
+    > dd {
+      color: var(--content-neutral-primary);
+      margin-left: 1ch;
+    }
+  }
+
+}
+
+h1 {
+  @include heading-h1;
+  color: var(--content-neutral-primary);
+  margin-bottom: var(--spacing-l);
+}

@@ -1,0 +1,37 @@
+@use 'mixins' as *;
+
+:root {
+  --spacing-xxxl: 120px;
+  --spacing-xxl: 80px;
+  --spacing-xl: 64px;
+  --spacing-l: 40px;
+  --spacing-m: 32px;
+  --spacing-s: 24px;
+  --spacing-xs: 16px;
+  --spacing-xxs: 8px;
+  --spacing-xxxs: 4px;
+
+  @include for-tablet-screen-sizes {
+    --spacing-xxxl: 80px;
+    --spacing-xxl: 56px;
+    --spacing-xl: 40px;
+    --spacing-l: 32px;
+    --spacing-m: 24px;
+    --spacing-s: 20px;
+    --spacing-xs: 12px;
+    --spacing-xxs: 8px;
+    --spacing-xxxs: 4px;
+  }
+
+  @include for-mobile-screen-sizes {
+    --spacing-xxxl: 64px;
+    --spacing-xxl: 40px;
+    --spacing-xl: 32px;
+    --spacing-l: 24px;
+    --spacing-m: 20px;
+    --spacing-s: 16px;
+    --spacing-xs: 8px;
+    --spacing-xxs: 4px;
+    --spacing-xxxs: 2px;
+  }
+}

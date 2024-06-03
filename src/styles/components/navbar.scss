@@ -1,20 +1,13 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
 .navbar {
-  background: var(--bg-color);
+  background: var(--background-primary);
 
-  @include for-pc-screen-sizes {
-    margin: 0 80px;
-  }
-
-  @include for-laptop-screen-sizes {
-    margin: 0 40px;
-  }
-
-  @include for-mobile-screen-sizes {
-    margin: 0 20px;
-  }
+  @include global-section;
 
   nav {
-    border-bottom: var(--border);
+    border-bottom: $border-neutral-low;
   }
 
   .logo-divider {
@@ -41,15 +34,15 @@
     }
 
     & svg path {
-      fill: var(--primary-text-color);
+      fill: var(--content-neutral-primary);
     }
 
     & svg rect {
-      stroke: var(--primary-text-color);
+      stroke: var(--content-neutral-primary);
     }
 
     @include for-hover-state {
-      &:hover svg {
+       svg {
         opacity: 0.6;
       }
     }
@@ -71,14 +64,14 @@
     letter-spacing: -0.04rem;
     display: flex;
     align-items: center;
-    color: var(--primary-text-color);
+    color: var(--content-neutral-primary);
 
     & svg {
       margin-right: 0.5rem;
       > path,
       circle {
         transition: 0.6s;
-        stroke: var(--hover-color);
+        stroke: var(--content-accent-primary);
       }
     }
     @include for-tablet-screen-sizes {
@@ -88,9 +81,7 @@
     }
 
     @include for-hover-state {
-      &:hover {
         opacity: 0.6;
-      }
     }
   }
 
@@ -138,9 +129,7 @@
 
     a {
       @include for-hover-state {
-        &:hover {
-          color: var(--hover-color);
-        }
+          color: var(--content-accent-primary);
       }
     }
   }
@@ -155,11 +144,11 @@
 
   .nav__item_search {
     @include for-tablet-screen-sizes {
-      border: var(--border);
+      border: $border-neutral-low;
     }
 
     @include for-hover-state {
-      &:hover button {
+      button {
         cursor: pointer;
       }
     }
@@ -177,12 +166,12 @@
 
         path {
           transition: 0.6s;
-          fill: var(--primary-text-color);
+          fill: var(--content-neutral-primary);
         }
       }
 
       @include for-hover-state {
-        &:hover svg path {
+        svg path {
           opacity: 0.6;
           transition: 0.6s;
           cursor: pointer;
@@ -253,46 +242,42 @@
     }
 
     @include for-hover-state {
-      &:hover {
         background: #007fff99;
 
         a {
           color: #fff;
         }
-      }
     }
   }
 
   .github {
-    background: var(--block-bg-color);
-    border: var(--border);
-    border-color: var(--block-bg-color);
+    background: var(--background-secondary);
+    border: $border-neutral-low;
+    border-color: var(--background-secondary);
 
     a {
       display: flex;
       gap: 8px;
       align-items: center;
-      color: var(--primary-text-color);
+      color: var(--content-neutral-primary);
     }
 
     & svg path {
       transition: 0.6s;
-      fill: var(--secondary-text-color);
+      fill: var(--content-neutral-secondary);
     }
 
     @include for-hover-state {
-      &:hover {
-        background: var(--secondary-text-color);
-        border-color: var(--secondary-text-color);
+        background: var(--content-neutral-secondary);
+        border-color: var(--content-neutral-secondary);
 
         a {
-          color: var(--white);
+          color: $color-neutral-white;
         }
 
         & svg path {
-          fill: var(--white);
+          fill: $color-neutral-white;
         }
-      }
     }
 
     img {

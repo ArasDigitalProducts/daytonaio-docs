@@ -68,7 +68,7 @@ const { sublist, nested } = Astro.props;
         line-height: 1;
         letter-spacing: -0.12px;
         text-transform: uppercase;
-        color: var(--secondary-text-color);
+        color: var(--content-neutral-secondary);
     }
 
     summary {
@@ -105,7 +105,7 @@ const { sublist, nested } = Astro.props;
         line-height: 1.4;
         letter-spacing: -0.04rem;
         text-decoration: none;
-        color: var(--primary-text-color);
+        color: var(--content-neutral-primary);
         padding: 8px 0;
         transition: 0.6s;
 
@@ -116,15 +116,15 @@ const { sublist, nested } = Astro.props;
 
             path {
                 transition: .6s;
-                fill: var(--primary-text-color);
+                fill: var(--content-neutral-primary);
             }
         }
     }
     a:focus, a:hover {
-        color: var(--hover-color);
+        color: var(--content-accent-primary);
         > svg {
             path {
-                fill: var(--hover-color);
+                fill: var(--content-accent-primary);
             }
         }
     }
@@ -132,10 +132,10 @@ const { sublist, nested } = Astro.props;
     [aria-current='page'],
     [aria-current='page']:hover,
     [aria-current='page']:focus {
-        color: var(--hover-color);
+        color: var(--content-accent-primary);
         > svg {
             path {
-                fill: var(--hover-color);
+                fill: var(--content-accent-primary);
             }
         }
     }

@@ -1,167 +1,279 @@
-h1 {
+@use 'mixins' as *;
+
+@mixin heading-h1 {
   font-family: 'Berkeley Mono', monospace;
-  font-size: 3rem;
   font-weight: 400;
+  font-size: 3rem;
   line-height: 1.2;
-  color: var(--primary-text-color);
   letter-spacing: -0.04em;
-  margin-bottom: 64px;
+
   @include for-tablet-screen-sizes {
     font-size: 2.5rem;
-    margin-bottom: 40px;
   }
 
   @include for-mobile-screen-sizes {
     font-size: 1.75rem;
-    margin-bottom: 32px;
   }
 }
 
-h2 {
+@mixin heading-h2 {
   font-family: 'Berkeley Mono', monospace;
-  font-size: 2.25rem;
   font-weight: 400;
+  font-size: 2.25rem;
   line-height: 1.2;
-  color: var(--primary-text-color);
   letter-spacing: -0.06em;
-  margin-bottom: 40px;
+
   @include for-tablet-screen-sizes {
     font-size: 1.75rem;
-    margin-bottom: 32px;
   }
 
   @include for-mobile-screen-sizes {
     font-size: 1.5rem;
-    margin-bottom: 24px;
   }
 }
 
-h3 {
+@mixin heading-h3 {
   font-family: 'Berkeley Mono', monospace;
-  font-size: 2rem;
   font-weight: 400;
+  font-size: 2rem;
   line-height: 1.2;
-  color: var(--primary-text-color);
   letter-spacing: -0.04em;
-  margin-bottom: 24px;
+
   @include for-tablet-screen-sizes {
     font-size: 1.375rem;
-    margin-bottom: 20px;
-  }
-  @include for-mobile-screen-sizes {
-    margin-bottom: 16px;
   }
 }
 
-h4 {
+@mixin heading-h4 {
   font-family: 'Berkeley Mono', monospace;
-  font-size: 1.5rem;
   font-weight: 400;
+  font-size: 1.5rem;
   line-height: 1.3;
-  color: var(--primary-text-color);
   letter-spacing: -0.04em;
-  margin-bottom: 16px;
+  text-transform: unset;
+
   @include for-tablet-screen-sizes {
     font-size: 1.25rem;
-    margin-bottom: 12px;
-  }
-  @include for-mobile-screen-sizes {
-    margin-bottom: 8px;
   }
 }
 
-h5 {
+@mixin heading-h5 {
   font-family: 'Berkeley Mono', monospace;
-  font-size: 1.25rem;
   font-weight: 400;
+  font-size: 1.25rem;
   line-height: 1.4;
-  color: var(--primary-text-color);
   letter-spacing: -0.04em;
-  margin-bottom: 16px;
+
   @include for-tablet-screen-sizes {
     font-size: 1.125rem;
-    margin-bottom: 12px;
-  }
-  @include for-mobile-screen-sizes {
-    margin-bottom: 8px;
   }
 }
 
-h6 {
+@mixin heading-h6 {
   font-family: 'Berkeley Mono', monospace;
-  font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.2;
-  color: var(--primary-text-color);
+  font-size: 1.125rem;
+  line-height: 1.4;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+
   @include for-tablet-screen-sizes {
     font-size: 1rem;
-    margin-bottom: 12px;
   }
+}
+
+@mixin heading-subtitle {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+}
+
+@mixin body-highlighted {
+  font-family: Inter, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+
   @include for-mobile-screen-sizes {
-    margin-bottom: 8px;
+    font-size: 1rem;
   }
 }
 
-
-p {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+@mixin body-regular {
+  font-family: Inter, sans-serif;
   font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: -0.01rem;
-  color: var(--secondary-text-color);
-  //  color: var(--accent-text-color);
-}
-
-a {
-  font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: -0.01rem;
-  color: var(--secondary-text-color);
-  text-decoration: none;
-}
-
-ol {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
-}
-
-hr {
-  border: none;
-  height: 1px;
-  color: var(--border-color);
-  background-color: var(--border-color);
-}
-
-strong {
-  font-family: 'Inter', sans-serif;
-  font-weight: bold;
   line-height: 1.6;
   letter-spacing: -0.01em;
-  color: var(--primary-text-color);
 }
 
-code {
-  text-wrap: wrap !important;
-  white-space: pre-wrap;
-  font-weight: 300;
-  letter-spacing: 0.008rem;
+@mixin body-medium {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+@mixin body-description {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
   font-size: 0.875rem;
-  color: var(--primary-text-color);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
-dt {
-  font-weight: bold;
-  color: var(--primary-text-color);
+@mixin body-note {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  letter-spacing: 0;
 }
 
-dd {
-  display: inline-block;
-  margin-left: 2em;
+@mixin number-l {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.2;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+@mixin number-s {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+@mixin button-m-all-caps {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+@mixin button-m {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@mixin button-s {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+@mixin button-s-all-caps {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+@mixin code-l {
+  font-family: 'Berkeley Mono', monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+
+  @include for-mobile-screen-sizes {
+    font-size: 0.875rem;
+  }
+}
+
+@mixin code-m {
+  font-family: 'Berkeley Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+}
+
+@mixin caption-all-caps {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+@mixin caption-regular {
+  font-family: 'Berkeley Mono', monospace;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+@mixin link-inline-m {
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  text-decoration: underline;
+}
+
+@mixin label-m {
+  font-family: 'Berkeley Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+@mixin label-overline {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@mixin link-navigation {
+  font-family: 'Berkeley Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+
+  @include for-tablet-screen-sizes {
+    font-size: 1rem;
+  }
+}
+
+@mixin link-footer-m {
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@mixin link-footer-s {
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
